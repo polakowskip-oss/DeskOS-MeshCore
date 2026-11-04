@@ -68,12 +68,12 @@ static void apply_adjustment(d1l_ui_radio_settings_controller_t *controller,
     }
     switch (action) {
     case D1L_UI_RADIO_SETTINGS_ACTION_FREQ_DOWN:
-        if (controller->edit.frequency_hz >= 902025000UL) {
+        if (controller->edit.frequency_hz >= 863025000UL) {
             controller->edit.frequency_hz -= 25000UL;
         }
         break;
     case D1L_UI_RADIO_SETTINGS_ACTION_FREQ_UP:
-        if (controller->edit.frequency_hz <= 927975000UL) {
+        if (controller->edit.frequency_hz <= 869975000UL) {
             controller->edit.frequency_hz += 25000UL;
         }
         break;
