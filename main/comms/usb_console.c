@@ -2426,8 +2426,8 @@ static void cmd_radio_set_freq(const char *line)
     double mhz = 0.0;
     if (!d1l_usb_command_parse_double_exact(
             line + strlen("radio set freq "), &mhz) ||
-        mhz < 902.0 || mhz > 928.0) {
-        err_result("radio set freq", "INVALID_FREQ", "Canada/USA D1L range is 902.000-928.000 MHz");
+        mhz < 863.0 || mhz > 870.0) {
+        err_result("radio set freq", "INVALID_FREQ", "EU D1L range is 863.000-870.000 MHz");
         return;
     }
     d1l_settings_t settings = {0};
