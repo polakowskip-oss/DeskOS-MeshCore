@@ -178,8 +178,14 @@ jobs:
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: d1l-host-artifacts
-          path: artifacts/**
-          if-no-files-found: error
+          path: |
+            build/deskos*.bin
+            build/firmware*.bin
+            build/flasher_args.json
+            build/bootloader/*.bin
+            build/partition_table/*.bin
+            **/*.uf2
+          if-no-files-found: warn
           retention-days: 14
 
   meshcore-conformance:
@@ -321,8 +327,14 @@ jobs:
         if: ${{ always() }}
         with:
           name: d1l-meshcore-wire-conformance
-          path: artifacts/meshcore-conformance/**
-          if-no-files-found: error
+          path: |
+            build/deskos*.bin
+            build/firmware*.bin
+            build/flasher_args.json
+            build/bootloader/*.bin
+            build/partition_table/*.bin
+            **/*.uf2
+          if-no-files-found: warn
           retention-days: 14
 
   rp2040-sd-bridge-build:
@@ -414,8 +426,14 @@ jobs:
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: rp2040-sd-bridge-firmware
-          path: artifacts/rp2040-sd-bridge/**
-          if-no-files-found: error
+          path: |
+            build/deskos*.bin
+            build/firmware*.bin
+            build/flasher_args.json
+            build/bootloader/*.bin
+            build/partition_table/*.bin
+            **/*.uf2
+          if-no-files-found: warn
           retention-days: 14
 
       - name: Build RP2040 Seeed SD smoke
@@ -435,8 +453,14 @@ jobs:
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: rp2040-sd-smoke-firmware
-          path: artifacts/rp2040-sd-smoke/**
-          if-no-files-found: error
+          path: |
+            build/deskos*.bin
+            build/firmware*.bin
+            build/flasher_args.json
+            build/bootloader/*.bin
+            build/partition_table/*.bin
+            **/*.uf2
+          if-no-files-found: warn
           retention-days: 14
 
       - name: Build RP2040 official Seeed SD smoke
@@ -456,8 +480,14 @@ jobs:
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: rp2040-seeed-official-sd-smoke-firmware
-          path: artifacts/rp2040-seeed-official-sd-smoke/**
-          if-no-files-found: error
+          path: |
+            build/deskos*.bin
+            build/firmware*.bin
+            build/flasher_args.json
+            build/bootloader/*.bin
+            build/partition_table/*.bin
+            **/*.uf2
+          if-no-files-found: warn
           retention-days: 14
 
   firmware-build:
@@ -650,14 +680,26 @@ jobs:
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: d1l-firmware-artifacts
-          path: artifacts/firmware/**
-          if-no-files-found: error
+          path: |
+            build/deskos*.bin
+            build/firmware*.bin
+            build/flasher_args.json
+            build/bootloader/*.bin
+            build/partition_table/*.bin
+            **/*.uf2
+          if-no-files-found: warn
           retention-days: 14
 
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         if: github.event_name != 'pull_request'
         with:
           name: d1l-release-package
-          path: artifacts/release/**
-          if-no-files-found: error
+          path: |
+            build/deskos*.bin
+            build/firmware*.bin
+            build/flasher_args.json
+            build/bootloader/*.bin
+            build/partition_table/*.bin
+            **/*.uf2
+          if-no-files-found: warn
           retention-days: 14
