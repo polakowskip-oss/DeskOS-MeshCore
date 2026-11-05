@@ -589,9 +589,12 @@ jobs:
         with:
           name: d1l-idf55-migration-state
           path: |
-            build/*.bin
+            build/deskos*.bin
+            build/firmware*.bin
             build/flasher_args.json
-            build/*.elf
+            build/bootloader/*.bin
+            build/partition_table/*.bin
+            **/*.uf2
           if-no-files-found: warn
           retention-days: 14
 
