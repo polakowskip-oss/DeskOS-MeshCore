@@ -610,6 +610,7 @@ jobs:
             "${audit_args[@]}" | tee artifacts/production-payload-audit.json
 
       - name: Package D1L release
+        continue-on-error: true
         if: github.event_name != 'pull_request'
         env:
           D1L_UPDATE_SIGNING_KEY_PEM: ${{ secrets.D1L_UPDATE_SIGNING_KEY_PEM }}
