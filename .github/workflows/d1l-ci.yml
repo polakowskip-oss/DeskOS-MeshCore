@@ -179,11 +179,8 @@ jobs:
         with:
           name: d1l-host-artifacts
           path: |
-            build/deskos*.bin
-            build/firmware*.bin
-            build/flasher_args.json
-            build/bootloader/*.bin
-            build/partition_table/*.bin
+            **/build/**/*.bin
+            **/build/**/flasher_args.json
             **/*.uf2
           if-no-files-found: warn
           retention-days: 14
@@ -328,11 +325,8 @@ jobs:
         with:
           name: d1l-meshcore-wire-conformance
           path: |
-            build/deskos*.bin
-            build/firmware*.bin
-            build/flasher_args.json
-            build/bootloader/*.bin
-            build/partition_table/*.bin
+            **/build/**/*.bin
+            **/build/**/flasher_args.json
             **/*.uf2
           if-no-files-found: warn
           retention-days: 14
@@ -427,11 +421,8 @@ jobs:
         with:
           name: rp2040-sd-bridge-firmware
           path: |
-            build/deskos*.bin
-            build/firmware*.bin
-            build/flasher_args.json
-            build/bootloader/*.bin
-            build/partition_table/*.bin
+            **/build/**/*.bin
+            **/build/**/flasher_args.json
             **/*.uf2
           if-no-files-found: warn
           retention-days: 14
@@ -454,11 +445,8 @@ jobs:
         with:
           name: rp2040-sd-smoke-firmware
           path: |
-            build/deskos*.bin
-            build/firmware*.bin
-            build/flasher_args.json
-            build/bootloader/*.bin
-            build/partition_table/*.bin
+            **/build/**/*.bin
+            **/build/**/flasher_args.json
             **/*.uf2
           if-no-files-found: warn
           retention-days: 14
@@ -481,11 +469,8 @@ jobs:
         with:
           name: rp2040-seeed-official-sd-smoke-firmware
           path: |
-            build/deskos*.bin
-            build/firmware*.bin
-            build/flasher_args.json
-            build/bootloader/*.bin
-            build/partition_table/*.bin
+           **/build/**/*.bin
+            **/build/**/flasher_args.json
             **/*.uf2
           if-no-files-found: warn
           retention-days: 14
@@ -590,11 +575,8 @@ jobs:
         with:
           name: d1l-idf55-migration-state
           path: |
-            build/deskos*.bin
-            build/firmware*.bin
-            build/flasher_args.json
-            build/bootloader/*.bin
-            build/partition_table/*.bin
+            **/build/**/*.bin
+            **/build/**/flasher_args.json
             **/*.uf2
           if-no-files-found: warn
           retention-days: 14
@@ -686,11 +668,8 @@ jobs:
         with:
           name: d1l-firmware-artifacts
           path: |
-            build/deskos*.bin
-            build/firmware*.bin
-            build/flasher_args.json
-            build/bootloader/*.bin
-            build/partition_table/*.bin
+            **/build/**/*.bin
+            **/build/**/flasher_args.json
             **/*.uf2
           if-no-files-found: warn
           retention-days: 14
@@ -700,11 +679,8 @@ jobs:
         with:
           name: d1l-release-package
           path: |
-            build/deskos*.bin
-            build/firmware*.bin
-            build/flasher_args.json
-            build/bootloader/*.bin
-            build/partition_table/*.bin
+            **/build/**/*.bin
+            **/build/**/flasher_args.json
             **/*.uf2
           if-no-files-found: warn
           retention-days: 14
