@@ -558,8 +558,11 @@ jobs:
         if: ${{ always() }}
         with:
           name: d1l-idf55-migration-state
-          path: artifacts/idf-migration/**
-          if-no-files-found: error
+          path: |
+            build/*.bin
+            build/flasher_args.json
+            build/*.elf
+          if-no-files-found: warn
           retention-days: 14
 
       - name: Require committed dependency solution
