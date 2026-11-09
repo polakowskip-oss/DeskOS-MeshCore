@@ -199,11 +199,11 @@ int main(void) {
     discovery_result.tag++; maybe_queue_discovery_results();
     assert(s_phone_discovery_tag==0 && s_pending_len==0);
     uint8_t radio_command[13]={11};
-    write_u32_le(radio_command+1,910525);
+    write_u32_le(radio_command+1,869618);
     write_u32_le(radio_command+5,62500);
-    radio_command[9]=7; radio_command[10]=5;
+    radio_command[9]=8; radio_command[10]=8;
     set_radio_command(radio_command,12);
-    assert(radio_saves==1 && radio_profile.frequency_hz==910525000);
+    assert(radio_saves==1 && radio_profile.frequency_hz==869618000);
     assert(radio_profile.bandwidth_tenths_khz==625);
     radio_command[11]=1;
     set_radio_command(radio_command,12);
