@@ -1049,6 +1049,13 @@ static void handle_action(d1l_ui_first_start_controller_t *controller,
     if (!controller || !object_valid(controller->overlay)) {
         return;
     }
+
+ if (controller->stage == D1L_UI_FIRST_START_RADIO && action == D1L_UI_FIRST_START_ACTION_NEXT) {
+        controller->radio_confirmed = true;
+        begin_page(controller, D1L_UI_FIRST_START_STORAGE_MAP);
+        return;
+ }
+    
     switch (action) {
     case D1L_UI_FIRST_START_ACTION_BACK:
         handle_back(controller);
