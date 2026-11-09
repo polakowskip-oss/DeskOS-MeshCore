@@ -1851,7 +1851,7 @@ to:
 1. enter the MeshCore name other people will see;
 2. optionally enter manual decimal latitude and longitude;
 3. optionally save Wi-Fi, or continue offline;
-4. confirm the Canadian 910.525 MHz / 62.5 kHz / SF7 / CR5 preset;
+4. confirm the EU 896.618 MHz / 62.5 kHz / SF8 / CR8 preset;
 5. verify the prepared FAT32 card and included NRCan provider; and
 6. review Public and add any channels you use before finishing.
 
