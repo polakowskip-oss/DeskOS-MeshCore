@@ -91,13 +91,13 @@ int main(void) {
   assert(RadioTimeOnAir(MODEM_LORA, 0, 12, 1, 32, false, 176, true) == 7349);
   assert(RadioTimeOnAir(MODEM_LORA, 3, 7, 1, 32, false, 176, true) == 613);
   assert(RadioTimeOnAir(MODEM_LORA, 3, 10, 1, 32, false, 176, true) == 4412);
-  d1l_radio_profile_t profile = {910525000, 62.5f, 12, 8, 20};
+  d1l_radio_profile_t profile = {869618000, 62.5f, 12, 8, 20};
   assert(configure_radio_profile(&profile) == ESP_OK);
   assert(programmed_timeout == 30639 && s_radio_tx_timeout_ms == 30639);
   assert(meshcore_radio_tx_operation_begin(D1L_MESH_TX_OPERATION_GENERIC, NULL));
   assert(s_radio_tx_watchdog.deadline_us == 1000000ULL + (30639ULL + 250ULL) * 1000ULL);
-  profile.spreading_factor = 7;
-  profile.coding_rate = 5;
+  profile.spreading_factor = 8;
+  profile.coding_rate = 8;
   assert(configure_radio_profile(&profile) == ESP_OK);
   assert(programmed_timeout == 5000);
   profile.spreading_factor = 13;
