@@ -632,7 +632,7 @@ def test_ui_simulator_covers_current_touch_surfaces(tmp_path):
     assert {"Diagnostics", "Health", "Crashlog  Events  Serial", "Open Terminal"} <= labels_by_view["diagnostics_sheet"]
     assert {"Message Public", "Public message", "20 chars | 20/138 B", "Keyboard", "Send", "Clear", "Close"} <= labels_by_view["compose_sheet"]
     assert {"DM YKF Corebot", "Direct message", "reply to YKF Corebot", "20 chars | 20/138 B", "Send", "Clear", "Close"} <= labels_by_view["compose_dm_sheet"]
-    assert {"Radio", "Canada preset", "Frequency 910.525 MHz", "-25k", "+25k", "Change bandwidth", "Restore Canada", "Save"} <= labels_by_view["radio_settings_sheet"]
+    assert {"Radio", "Canada preset", "Frequency 869.618 MHz", "-25k", "+25k", "Change bandwidth", "Restore Canada", "Save"} <= labels_by_view["radio_settings_sheet"]
     assert {
         "Storage",
         "Back",
@@ -806,10 +806,10 @@ def test_ui_simulator_covers_current_touch_surfaces(tmp_path):
     } <= labels_by_view["first_start_wifi"]
     assert {
         "Confirm Canadian radio",
-        "910.525 MHz",
+        "869.618 MHz",
         "Bandwidth 62.5 kHz",
-        "Spreading factor 7",
-        "Coding rate 5",
+        "Spreading factor 8",
+        "Coding rate 8",
         "Confirm & Next",
     } <= labels_by_view["first_start_radio"]
     assert {
