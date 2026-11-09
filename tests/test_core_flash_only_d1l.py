@@ -362,10 +362,10 @@ def retained_state(commit: str = COMMIT, *, name: str = "DeskOS") -> list[dict]:
             },
             "map_tiles": {"zoom": 12},
             "radio": {
-                "frequency_hz": 910525000,
+                "frequency_hz": 869618000,
                 "bandwidth_khz": 62.5,
-                "sf": 7,
-                "cr": 5,
+                "sf": 8,
+                "cr": 8,
                 "tx_power_dbm": 22,
                 "rx_boost": True,
                 "tcxo": "auto",
