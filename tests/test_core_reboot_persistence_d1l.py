@@ -223,10 +223,10 @@ def settings(name: str = f"D1L-Core-{COMMIT[:7]}"):
             "auto_dst": False,
         },
         "radio": {
-            "frequency_hz": 910525000,
+            "frequency_hz": 869618000,
             "bandwidth_khz": 62.5,
-            "sf": 7,
-            "cr": 5,
+            "sf": 8,
+            "cr": 8,
             "tx_power_dbm": 22,
             "rx_boost": True,
             "tcxo": "1.8V",
