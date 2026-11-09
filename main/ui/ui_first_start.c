@@ -470,8 +470,8 @@ static void render_radio(d1l_ui_first_start_controller_t *controller)
         D1L_FIRST_START_COLOR_MUTED, 16, 82, 448, false);
     lv_obj_t *preset = create_label(
         controller->overlay,
-        "910.525 MHz\nBandwidth 62.5 kHz\nSpreading factor 7\n"
-        "Coding rate 5",
+        "869.618 MHz\nBandwidth 62.5 kHz\nSpreading factor 8\n"
+        "Coding rate 8",
         D1L_FIRST_START_COLOR_TEXT, 24, 124, 432, true);
     if (preset) {
         lv_obj_set_style_text_font(preset, &lv_font_montserrat_24, 0);
