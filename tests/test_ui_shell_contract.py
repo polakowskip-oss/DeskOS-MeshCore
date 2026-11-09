@@ -919,7 +919,7 @@ def test_first_boot_onboarding_sheet_is_touch_backed_and_persisted():
         "static void complete_onboarding_from_ui", 1
     )[1].split("static const char *public_row_state", 1)[0]
     assert '"D1L Desk"' not in onboarding_callbacks
-    assert '"Canada/USA preset confirmed  910.525 BW62.5 SF7 CR5"' in source
+    assert '"Canada/USA preset confirmed  869.618 BW62.5 SF8 CR8"' in source
     assert '"Role Desk Companion  Wi-Fi off  BLE off  Observer off"' in source
     assert 'create_button(s_onboarding_sheet, "Start"' in source
     assert 'create_button(s_onboarding_sheet, "Use Defaults"' in source
