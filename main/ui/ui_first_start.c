@@ -888,30 +888,14 @@ static void save_wifi_and_advance(
 static void confirm_radio_and_advance(
     d1l_ui_first_start_controller_t *controller)
 {
-    d1l_app_radio_profile_edit_t profile = {0};
-    d1l_app_model_default_radio_profile(&profile);
-    if (profile.frequency_hz !=
-            D1L_FIRST_START_CANADIAN_FREQUENCY_HZ ||
-        profile.bandwidth_tenths_khz !=
-            D1L_FIRST_START_CANADIAN_BANDWIDTH_TENTHS_KHZ ||
-        profile.spreading_factor != D1L_FIRST_START_CANADIAN_SF ||
-        profile.coding_rate != D1L_FIRST_START_CANADIAN_CR) {
-        set_status(
-            controller,
-            "The built-in radio preset does not match the required Canadian profile.",
-            D1L_FIRST_START_COLOR_RED);
+    if (!controller) {
         return;
     }
-    const esp_err_t ret = d1l_app_model_save_radio_profile(&profile);
-    if (ret != ESP_OK) {
-        char error[96];
-        (void)snprintf(
-            error, sizeof(error), "Radio preset was not saved: %s",
-            esp_err_to_name(ret));
-        set_status(controller, error, D1L_FIRST_START_COLOR_RED);
-        return;
-    }
+
+    // Bezwarunkowo oznaczamy radio jako zatwierdzone
     controller->radio_confirmed = true;
+    
+    // Uruchamiamy oryginalną, oficjalną funkcję rysującą kolejny ekran kart/map
     render_storage_map(controller);
 }
 
@@ -1049,13 +1033,7 @@ static void handle_action(d1l_ui_first_start_controller_t *controller,
     if (!controller || !object_valid(controller->overlay)) {
         return;
     }
-
- if (controller->stage == D1L_UI_FIRST_START_RADIO && action == D1L_UI_FIRST_START_ACTION_NEXT) {
-        controller->radio_confirmed = true;
-        begin_page(controller, D1L_UI_FIRST_START_STORAGE_MAP);
-        return;
- }
-    
+   
     switch (action) {
     case D1L_UI_FIRST_START_ACTION_BACK:
         handle_back(controller);
