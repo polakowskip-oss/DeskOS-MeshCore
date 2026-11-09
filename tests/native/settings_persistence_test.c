@@ -271,10 +271,10 @@ static void set_common_radio(uint32_t *frequency_hz,
                              uint8_t *coding_rate,
                              int8_t *tx_power_dbm)
 {
-    *frequency_hz = 910525000UL;
+    *frequency_hz = 869618000UL;
     *bandwidth_tenths_khz = 625U;
-    *spreading_factor = 7U;
-    *coding_rate = 5U;
+    *spreading_factor = 8U;
+    *coding_rate = 8U;
     *tx_power_dbm = 20;
 }
 
